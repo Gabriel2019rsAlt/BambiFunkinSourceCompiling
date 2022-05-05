@@ -36,7 +36,6 @@ import sys.io.File;
 import Type.ValueType;
 import Controls;
 import DialogueBoxPsych;
-import Shaders;
 
 #if desktop
 import Discord;
@@ -110,9 +109,9 @@ class FunkinLua {
 		set('weekRaw', PlayState.storyWeek);
 		set('week', WeekData.weeksList[PlayState.storyWeek]);
 		set('seenCutscene', PlayState.seenCutscene);
-
-		//set('require', false);
-       //set('os', false);
+		
+		// Block require and os, Should probably have a proper function but this should be good enough for now until someone smarter comes along and recreates a safe version of the OS library
+		set('require', false);
 
 		// Camera poo
 		set('cameraX', 0);
@@ -121,12 +120,6 @@ class FunkinLua {
 		// Screen stuff
 		set('screenWidth', FlxG.width);
 		set('screenHeight', FlxG.height);
-
-		// Window shit so modcharts are less painful
- 		set('windowX', PlayState.instance.window.x);
- 		set('windowY', PlayState.instance.window.y);
- 		set('windowW', PlayState.instance.window.width);
- 		set('windowH', PlayState.instance.window.height);
 
 		// PlayState cringe ass nae nae bullcrap
 		set('curBeat', 0);
@@ -171,7 +164,7 @@ class FunkinLua {
 		// Character shit
 		set('boyfriendName', PlayState.SONG.player1);
 		set('dadName', PlayState.SONG.player2);
-		set('gfName', PlayState.SONG.player3);
+		set('gfName', PlayState.SONG.gfVersion);
 
 		// Some settings, no jokes
 		set('downscroll', ClientPrefs.downScroll);
@@ -187,7 +180,6 @@ class FunkinLua {
 		set('healthBarAlpha', ClientPrefs.healthBarAlpha);
 		set('noResetButton', ClientPrefs.noReset);
 		set('lowQuality', ClientPrefs.lowQuality);
-		//set('mechanics', ClientPrefs.mechanics);
 
 		#if windows
 		set('buildTarget', 'windows');
@@ -1734,23 +1726,6 @@ class FunkinLua {
 			FlxG.sound.music.fadeOut(duration, toValue);
 			luaTrace('musicFadeOut is deprecated! Use soundFadeOut instead.', false, true);
 		});
-		Lua_helper.add_callback(lua, "addEffect1", function(camera:String, chromeOffset:Float = 0.005)
-		{
-			PlayState.instance.addShaderToCamera(camera, new ChromaticAberrationEffect(chromeOffset));
-		});
-		Lua_helper.add_callback(lua, "addEffect2", function(camera:String, waveSpeed:Float = 0.1, waveFrq:Float = 0.1, waveAmp:Float = 0.1)
-		{
-			PlayState.instance.addShaderToCamera(camera, new GlitchEffect(waveSpeed, waveFrq, waveAmp));
-		});
-		Lua_helper.add_callback(lua, "addEffect3", function(camera:String,lockAlpha:Bool=false)
-		{
-			PlayState.instance.addShaderToCamera(camera, new ScanlineEffect(lockAlpha));
-		});
-		Lua_helper.add_callback(lua, "addEffect4", function(camera:String,glitchFactor:Float = 0.0,distortion:Bool=true,perspectiveOn:Bool=true,vignetteMoving:Bool=true)
-		{
-			PlayState.instance.addShaderToCamera(camera, new VCRDistortionEffect(glitchFactor,distortion,perspectiveOn,vignetteMoving));
-		});
-		
 		
 		call('onCreate', []);
 		#end
@@ -1975,6 +1950,7 @@ class FunkinLua {
 			}
 
 			var conv:Dynamic = Convert.fromLua(lua, result);
+			Lua.pop(lua, 1);
 			return conv;
 		}
 		#end
@@ -2053,12 +2029,6 @@ class FunkinLua {
 
 		Lua.close(lua);
 		lua = null;
-		if (!FlxG.fullscreen) {	
-			PlayState.instance.window.x = PlayState.instance.windowX;
-			PlayState.instance.window.y = PlayState.instance.windowY;
-			PlayState.instance.window.width = PlayState.instance.windowW;
-			PlayState.instance.window.height = PlayState.instance.windowH;
-		}
 		#end
 	}
 
