@@ -456,6 +456,23 @@ class PlayState extends MusicBeatState
 					add(stageCurtains);
 				}
 
+                         case 'redbg':
+                                {
+                                defaultCamZoom = 0.85;
+                                curStage = 'redbg';
+                                var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('redsky'));
+                                bg.antialiasing = true;
+                                bg.scrollFactor.set(0.6, 0.6);
+                                bg.active = true;
+                                var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+                                testshader.waveAmplitude = 0.1;
+                                testshader.waveFrequency = 5;
+                                testshader.waveSpeed = 2;
+                                bg.shader = testshader.shader;
+                                curbg = bg;
+                                add(bg);
+                                }
+				
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {
 					halloweenBG = new BGSprite('halloween_bg', -200, -100, ['halloweem bg0', 'halloweem bg lightning strike']);
