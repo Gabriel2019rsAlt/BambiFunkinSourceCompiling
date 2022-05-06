@@ -456,11 +456,45 @@ class PlayState extends MusicBeatState
 					add(stageCurtains);
 				}
 
-                         case 'redbg':
+                         case 'scarybgblue':
                                 {
                                 defaultCamZoom = 0.85;
                                 curStage = 'redbg';
-                                var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('redsky'));
+                                var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('Bambi/scarybgblue'));
+                                bg.antialiasing = true;
+                                bg.scrollFactor.set(0.6, 0.6);
+                                bg.active = true;
+                                var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+                                testshader.waveAmplitude = 0.1;
+                                testshader.waveFrequency = 5;
+                                testshader.waveSpeed = 2;
+                                bg.shader = testshader.shader;
+                                curbg = bg;
+                                add(bg);
+                                }
+				
+                         case 'scarybgyellow':
+                                {
+                                defaultCamZoom = 0.85;
+                                curStage = 'redbg';
+                                var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('Bambi/asian'));
+                                bg.antialiasing = true;
+                                bg.scrollFactor.set(0.6, 0.6);
+                                bg.active = true;
+                                var testshader:Shaders.GlitchEffect = new Shaders.GlitchEffect();
+                                testshader.waveAmplitude = 0.1;
+                                testshader.waveFrequency = 5;
+                                testshader.waveSpeed = 2;
+                                bg.shader = testshader.shader;
+                                curbg = bg;
+                                add(bg);
+                                }
+				
+                         case 'scarybgred':
+                                {
+                                defaultCamZoom = 0.85;
+                                curStage = 'redbg';
+                                var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('Bambi/scarybg'));
                                 bg.antialiasing = true;
                                 bg.scrollFactor.set(0.6, 0.6);
                                 bg.active = true;
