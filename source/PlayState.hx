@@ -55,6 +55,7 @@ import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
+import Shaders.PulseEffect;
 #if sys
 import sys.FileSystem;
 #end
@@ -118,6 +119,9 @@ class PlayState extends MusicBeatState
 	public static var storyWeek:Int = 0;
 	public static var storyPlaylist:Array<String> = [];
 	public static var storyDifficulty:Int = 1;
+
+	public static var screenshader:Shaders.PulseEffect = new PulseEffect();
+	public var curbg:FlxSprite;
 
 	public var vocals:FlxSound;
 
@@ -303,6 +307,11 @@ class PlayState extends MusicBeatState
 		instakillOnMiss = ClientPrefs.getGameplaySetting('instakill', false);
 		practiceMode = ClientPrefs.getGameplaySetting('practice', false);
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay', false);
+
+		screenshader.waveAmplitude = 1;
+		screenshader.waveFrequency = 2;
+		screenshader.waveSpeed = 1;
+		screenshader.shader.uTime.value[0] = new flixel.math.FlxRandom().float(-100000, 100000);
 
 		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
@@ -2177,6 +2186,15 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 		}*/
+
+		if (curbg != null)
+			{
+				if (curbg.active)
+				{
+					var shad = cast(curbg.shader, Shaders.GlitchShader);
+					shad.uTime.value[0] += elapsed;
+				}
+			}
 
 		callOnLuas('onUpdate', [elapsed]);
 
