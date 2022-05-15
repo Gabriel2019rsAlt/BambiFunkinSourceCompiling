@@ -110,6 +110,25 @@ class FreeplayState extends MusicBeatState
 		Highscore.load();
 		add(NameAlpha);
 
+	    if (FlxG.keys.justPressed.SEVEN)
+			{
+				FlxG.sound.music.volume = 0;
+				PlayState.SONG = Song.loadFromJson("opposition-hard", "opposition"); // you dun fucked up again
+				// FlxG.save.data.oppositionFound = true;
+				
+				new FlxTimer().start(0.25, function(tmr:FlxTimer)
+				{
+				LoadingState.loadAndSwitchState(new playstate());
+				}
+				else
+					{
+						LoadingState.loadAndSwitchState(new PlayState());
+					}
+					FlxG.sound.music.volume = 0;
+					FreeplayState.destroyFreeplayVocals();
+				});
+			}
+			
 		super.create();
 	}
     			// FlxG.sound.music.volume = 0;
@@ -196,6 +215,7 @@ class FreeplayState extends MusicBeatState
 		{
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = false;
+			songText.itemType = "D-Shape";
 			songText.targetY = i;
 			grpSongs.add(songText);
 
@@ -373,7 +393,29 @@ class FreeplayState extends MusicBeatState
 				PlayState.storyWeek = songs[curSelected].week;
 				if(ClientPrefs.flashing) camGame.flash(FlxColor.WHITE, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-
+				if (ClientPrefs.css)
+				{
+				LoadingState.loadAndSwitchState(new playstate());
+				}
+				else
+					{
+					   LoadingState.loadAndSwitchState(new PlayState());
+					}
+			}
+		}
+		if (fuckyou)
+		{
+			FlxG.sound.music.volume = 0;
+			PlayState.SONG = Song.loadFromJson("disposition", "disposition"); // you dun fucked up again
+			FlxG.save.data.oppositionFound = true;
+			
+			new FlxTimer().start(0.25, function(tmr:FlxTimer)
+			{
+			LoadingState.loadAndSwitchState(new playstate());
+				FlxG.sound.music.volume = 0;
+				FreeplayState.destroyFreeplayVocals();
+			});
+		}
 	#if PRELOAD_ALL
 	if(space && instPlaying != curSelected)
 	{
@@ -415,6 +457,7 @@ class FreeplayState extends MusicBeatState
 
 		PlayState.storyWeek = songs[curSelected].week;
 		trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
+		LoadingState.loadAndSwitchState(new playstate());
 
 		FlxG.sound.music.volume = 0;
 				
