@@ -110,16 +110,6 @@ class FreeplayState extends MusicBeatState
 		Highscore.load();
 		add(NameAlpha);
 
-	    if (FlxG.keys.justPressed.SEVEN)
-			{
-				FlxG.sound.music.volume = 0;
-				PlayState.SONG = Song.loadFromJson("opposition-hard", "opposition"); // you dun fucked up again
-				// FlxG.save.data.oppositionFound = true;
-				
-				new FlxTimer().start(0.25, function(tmr:FlxTimer)
-
-{
-
 		super.create();
 	}
     			// FlxG.sound.music.volume = 0;
