@@ -7,7 +7,6 @@ import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxMath;
 import flixel.util.FlxTimer;
 import flixel.system.FlxSound;
-import flash.media.Sound;
 
 using StringTools;
 
@@ -22,7 +21,9 @@ class Alphabet extends FlxSpriteGroup
 	// for menu shit
 	public var forceX:Float = Math.NEGATIVE_INFINITY;
 	public var targetY:Float = 0;
+	public var targetX:Float = 0;
 	public var yMult:Float = 120;
+	public var itemType:String = "";
 	public var xAdd:Float = 0;
 	public var yAdd:Float = 0;
 	public var isMenuItem:Bool = false;
@@ -40,7 +41,7 @@ class Alphabet extends FlxSpriteGroup
 
 	var splitWords:Array<String> = [];
 
-	public var isBold:Bool = false;
+	var isBold:Bool = false;
 	public var lettersArray:Array<AlphaCharacter> = [];
 
 	public var finishedText:Bool = false;
@@ -77,7 +78,6 @@ class Alphabet extends FlxSpriteGroup
 	{
 		for (i in 0...lettersArray.length) {
 			var letter = lettersArray[0];
-			letter.destroy();
 			remove(letter);
 			lettersArray.remove(letter);
 		}
@@ -123,7 +123,7 @@ class Alphabet extends FlxSpriteGroup
 			// {
 			// }
 
-			var spaceChar:Bool = (character == " " || (isBold && character == "_"));
+			var spaceChar:Bool = (character == " " || character == "_");
 			if (spaceChar)
 			{
 				consecutiveSpaces++;
@@ -198,14 +198,7 @@ class Alphabet extends FlxSpriteGroup
 	var xPos:Float = 0;
 	public var curRow:Int = 0;
 	var dialogueSound:FlxSound = null;
-	private static var soundDialog:Sound = null;
 	var consecutiveSpaces:Int = 0;
-	public static function setDialogueSound(name:String = '')
-	{
-		if (name == null || name.trim() == '') name = 'dialogue';
-		soundDialog = Paths.sound(name);
-		if(soundDialog == null) soundDialog = Paths.sound('dialogue');
-	}
 
 	var typeTimer:FlxTimer = null;
 	public function startTypedText(speed:Float):Void
@@ -215,17 +208,12 @@ class Alphabet extends FlxSpriteGroup
 
 		// trace(arrayShit);
 
-		if(soundDialog == null)
-		{
-			Alphabet.setDialogueSound();
-		}
-
 		if(speed <= 0) {
 			while(!finishedText) { 
 				timerCheck();
 			}
 			if(dialogueSound != null) dialogueSound.stop();
-			dialogueSound = FlxG.sound.play(soundDialog);
+			dialogueSound = FlxG.sound.play(Paths.sound('dialogue'));
 		} else {
 			typeTimer = new FlxTimer().start(0.1, function(tmr:FlxTimer) {
 				typeTimer = new FlxTimer().start(speed, function(tmr:FlxTimer) {
@@ -256,7 +244,7 @@ class Alphabet extends FlxSpriteGroup
 		}
 
 		if(loopNum <= splitWords.length && splitWords[loopNum] != null) {
-			var spaceChar:Bool = (splitWords[loopNum] == " " || (isBold && splitWords[loopNum] == "_"));
+			var spaceChar:Bool = (splitWords[loopNum] == " " || splitWords[loopNum] == "_");
 			if (spaceChar)
 			{
 				consecutiveSpaces++;
@@ -323,7 +311,7 @@ class Alphabet extends FlxSpriteGroup
 
 				if(tmr != null) {
 					if(dialogueSound != null) dialogueSound.stop();
-					dialogueSound = FlxG.sound.play(soundDialog);
+					dialogueSound = FlxG.sound.play(Paths.sound('dialogue'));
 				}
 
 				add(letter);
@@ -345,6 +333,7 @@ class Alphabet extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
+		var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
 		if (isMenuItem)
 		{
 			var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
@@ -356,6 +345,36 @@ class Alphabet extends FlxSpriteGroup
 			} else {
 				x = FlxMath.lerp(x, (targetY * 20) + 90 + xAdd, lerpVal);
 			}
+		}
+		switch (itemType)
+		{
+			case "Classic":
+				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.16);
+				x = FlxMath.lerp(x, (targetY * 20) + 90, 0.16);
+
+			case "Vertical":
+				y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.5), 0.16);
+				x = FlxMath.lerp(x, (targetY * 0) + 308, 0.16);
+				x += targetX;
+			
+			case "C-Shape":
+				y = FlxMath.lerp(y, (scaledY * 65) + (FlxG.height * 0.39), 0.16);
+
+				x = FlxMath.lerp(x, Math.exp(scaledY * 0.8) * 70 + (FlxG.width * 0.1), 0.16);
+				if (scaledY < 0)
+					x = FlxMath.lerp(x, Math.exp(scaledY * -0.8) * 70 + (FlxG.width * 0.1), 0.16);
+
+				if (x > FlxG.width + 30)
+					x = FlxG.width + 30;
+			case "D-Shape":
+				y = FlxMath.lerp(y, (scaledY * 90) + (FlxG.height * 0.45), 0.16);
+	
+				x = FlxMath.lerp(x, Math.exp(scaledY * 0.8) * -70 + (FlxG.width * 0.35), 0.16);
+				if (scaledY < 0)
+					x = FlxMath.lerp(x, Math.exp(scaledY * -0.8) * -70 + (FlxG.width * 0.35), 0.16);
+	
+				if (x < -900)
+					x = -900;
 		}
 
 		super.update(elapsed);
@@ -444,10 +463,6 @@ class AlphaCharacter extends FlxSprite
 				x -= 20 / textSize;
 				y -= 5 * textSize;
 				offset.x = 12 * textSize;
-			case '.':
-				y += 45 * textSize;
-				x += 5 * textSize;
-				offset.x += 3 * textSize;
 		}
 	}
 
