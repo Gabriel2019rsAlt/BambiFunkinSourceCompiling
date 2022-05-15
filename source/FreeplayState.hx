@@ -116,7 +116,9 @@ class FreeplayState extends MusicBeatState
 				PlayState.SONG = Song.loadFromJson("opposition-hard", "opposition"); // you dun fucked up again
 				// FlxG.save.data.oppositionFound = true;
 				
-				new FlxTimer().start(0.25, function(tmr:FlxTimer))
+				new FlxTimer().start(0.25, function(tmr:FlxTimer)
+
+{
 
 		super.create();
 	}
