@@ -117,6 +117,7 @@ class FreeplayState extends MusicBeatState
 				// FlxG.save.data.oppositionFound = true;
 				
 				new FlxTimer().start(0.25, function(tmr:FlxTimer)
+			}
 			
 		super.create();
 	}
