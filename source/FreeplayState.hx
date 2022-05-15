@@ -118,6 +118,7 @@ class FreeplayState extends MusicBeatState
 				
 				new FlxTimer().start(0.25, function(tmr:FlxTimer)
 			}
+}
 };
 		super.create();
 	}
