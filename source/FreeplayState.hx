@@ -384,19 +384,7 @@ class FreeplayState extends MusicBeatState
 					}
 			}
 		}
-		if (fuckyou)
-		{
-			FlxG.sound.music.volume = 0;
-			PlayState.SONG = Song.loadFromJson("disposition", "disposition"); // you dun fucked up again
-			FlxG.save.data.oppositionFound = true;
-			
-			new FlxTimer().start(0.25, function(tmr:FlxTimer)
-			{
-			LoadingState.loadAndSwitchState(new playstate());
-				FlxG.sound.music.volume = 0;
-				FreeplayState.destroyFreeplayVocals();
-			});
-		}
+
 	#if PRELOAD_ALL
 	if(space && instPlaying != curSelected)
 	{
