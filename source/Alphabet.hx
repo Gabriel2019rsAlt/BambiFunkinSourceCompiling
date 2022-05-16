@@ -22,6 +22,8 @@ class Alphabet extends FlxSpriteGroup
 	// for menu shit
 	public var forceX:Float = Math.NEGATIVE_INFINITY;
 	public var targetY:Float = 0;
+	public var targetX:Float = 0;
+	public var itemType:String = "";
 	public var yMult:Float = 120;
 	public var xAdd:Float = 0;
 	public var yAdd:Float = 0;
