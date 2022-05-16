@@ -376,7 +376,7 @@ class FreeplayState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 				if (ClientPrefs.css)
 				{
-				LoadingState.loadAndSwitchState(new playstate());
+				LoadingState.loadAndSwitchState(new PlayState());
 				}
 				else
 					{
