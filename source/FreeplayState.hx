@@ -374,16 +374,8 @@ class FreeplayState extends MusicBeatState
 				PlayState.storyWeek = songs[curSelected].week;
 				if(ClientPrefs.flashing) camGame.flash(FlxColor.WHITE, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-				if (ClientPrefs.css)
-				{
 				LoadingState.loadAndSwitchState(new PlayState());
-				}
-				else
-					{
-					   LoadingState.loadAndSwitchState(new PlayState());
-					}
 			}
-		}
 
 	#if PRELOAD_ALL
 	if(space && instPlaying != curSelected)
