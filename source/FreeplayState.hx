@@ -431,6 +431,7 @@ class FreeplayState extends MusicBeatState
 	}
 	super.update(elapsed);
 }
+}
 
 public static function destroyFreeplayVocals() {
 	if(vocals != null) {
