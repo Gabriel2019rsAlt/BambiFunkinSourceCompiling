@@ -383,9 +383,11 @@ class FreeplayState extends MusicBeatState
 					   LoadingState.loadAndSwitchState(new PlayState());
 					}
 			}
-		};
+		}
+};
 	#if PRELOAD_ALL
 		if(space && instPlaying != curSelected)
+	{
 		destroyFreeplayVocals();
 		Paths.currentModDirectory = songs[curSelected].folder;
 		var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
