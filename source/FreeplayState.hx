@@ -383,8 +383,7 @@ class FreeplayState extends MusicBeatState
 					   LoadingState.loadAndSwitchState(new PlayState());
 					}
 			}
-		}
-}
+		};
 	#if PRELOAD_ALL
 		if(space && instPlaying != curSelected)
 	{
