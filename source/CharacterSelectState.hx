@@ -502,14 +502,4 @@ class CharacterSelectState extends MusicBeatState
 	}
 	
 	
-	public function endIt(e:FlxTimer = null)
-	{
-		trace("ENDING");
-		PlayState.characteroverride = currentSelectedCharacter.names[0];
-		PlayState.formoverride = currentSelectedCharacter.names[curForm];
-		PlayState.curmult = [1, 1, 1, 1];
-		//LoadingState.loadAndSwitchState(new CharacterSelectStateGF());
-		LoadingState.loadAndSwitchState(new PlayState());
-	}
-	
 }
