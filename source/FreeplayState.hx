@@ -386,7 +386,6 @@ class FreeplayState extends MusicBeatState
 		};
 	#if PRELOAD_ALL
 		if(space && instPlaying != curSelected)
-	{
 		destroyFreeplayVocals();
 		Paths.currentModDirectory = songs[curSelected].folder;
 		var poop:String = Highscore.formatSong(songs[curSelected].songName.toLowerCase(), curDifficulty);
