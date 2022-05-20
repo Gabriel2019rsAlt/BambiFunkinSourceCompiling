@@ -83,7 +83,7 @@ class FreeplayState extends MusicBeatState
 		isDebug = true;
 		#end
 
-		bg.loadGraphic(MainMenuState.menuDesat());
+		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = 0xFF4965FF;
 		add(bg);
 
