@@ -385,7 +385,7 @@ class FreeplayState extends MusicBeatState
 			}
 		}
 	#if PRELOAD_ALL
-	if(space && instPlaying != curSelected)
+		if(space && instPlaying != curSelected)}
 	{
 		destroyFreeplayVocals();
 		Paths.currentModDirectory = songs[curSelected].folder;
