@@ -9,35 +9,43 @@ using StringTools;
 
 class Boyfriend extends Character
 {
-	public var startedDeath:Bool = false;
+    public var startedDeath:Bool = false;
 
-	public function new(x:Float, y:Float, ?char:String = 'bf')
-	{
-		super(x, y, char, true);
-	}
+    public function new(x:Float, y:Float, ?char:String = 'bf')
+    {
+        switch (char)
+        {
+            case "dave" | "dave-old" | "dave-annoyed" | 'dave-splitathon-night':
+                super(x, y - 40, char, true);
+            case 'dave-angey' | 'dave-annoyed-3d' | 'dave-3d-standing-bruh-what':
+                super(x, y - 225, char, true);
+            default:
+                super(x, y, char, true);
+        }
+    }
 
-	override function update(elapsed:Float)
-	{
-		if (!debugMode && animation.curAnim != null)
-		{
-			if (animation.curAnim.name.startsWith('sing'))
-			{
-				holdTimer += elapsed;
-			}
-			else
-				holdTimer = 0;
+    override function update(elapsed:Float)
+    {
+        if (!debugMode)
+        {
+            if (animation.curAnim.name.startsWith('sing'))
+            {
+                holdTimer += elapsed;
+            }
+            else
+                holdTimer = 0;
 
-			if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
-			{
-				playAnim('idle', true, false, 10);
-			}
+            if (animation.curAnim.name.endsWith('miss') && animation.curAnim.finished && !debugMode)
+            {
+                playAnim('idle', true, false, 10);
+            }
 
-			if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished && startedDeath)
-			{
-				playAnim('deathLoop');
-			}
-		}
+            if (animation.curAnim.name == 'firstDeath' && animation.curAnim.finished && startedDeath)
+            {
+                playAnim('deathLoop');
+            }
+        }
 
-		super.update(elapsed);
-	}
+        super.update(elapsed);
+    }
 }
