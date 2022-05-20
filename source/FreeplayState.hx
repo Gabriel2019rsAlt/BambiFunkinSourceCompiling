@@ -377,6 +377,7 @@ class FreeplayState extends MusicBeatState
 				{
 				LoadingState.loadAndSwitchState(new CharacterSelectState());
 				}
+			}
 				else
 					{
 					   LoadingState.loadAndSwitchState(new PlayState());
