@@ -83,7 +83,7 @@ class FreeplayState extends MusicBeatState
 		isDebug = true;
 		#end
 
-		bg.loadGraphic(MainMenuState.randomizeBG());
+		bg.loadGraphic(MainMenuState.menuDesat());
 		bg.color = 0xFF4965FF;
 		add(bg);
 
@@ -374,7 +374,6 @@ class FreeplayState extends MusicBeatState
 				PlayState.storyWeek = songs[curSelected].week;
 				if(ClientPrefs.flashing) camGame.flash(FlxColor.WHITE, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-				if (ClientPrefs.css)
 				{
 				LoadingState.loadAndSwitchState(new CharacterSelectState());
 				}
