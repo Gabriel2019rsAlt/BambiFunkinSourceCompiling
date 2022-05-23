@@ -82,6 +82,7 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+                bg.color = 0xFF4965FF;
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
