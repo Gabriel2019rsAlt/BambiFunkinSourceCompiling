@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="e.png"><SubTexture name="e idle0000" x="0" y="0" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e idle0001" x="565" y="0" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e idle0002" x="1130" y="0" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e left0000" x="1695" y="0" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e left0001" x="0" y="557" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e left0002" x="565" y="557" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e left0003" x="1130" y="557" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e down0000" x="1695" y="557" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e down0001" x="0" y="1114" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e down0002" x="565" y="1114" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e up0000" x="1130" y="1114" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e up0001" x="1695" y="1114" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e up0002" x="0" y="1671" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e right0000" x="565" y="1671" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e right0001" x="1130" y="1671" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+<SubTexture name="e right0002" x="1695" y="1671" width="565" height="557" frameX="0" frameY="0" frameWidth="565" frameHeight="557" />
+</TextureAtlas>
