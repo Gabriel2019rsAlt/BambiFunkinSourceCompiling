@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Nervous.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Down Nervous0000" x="0" y="0" width="387" height="500" frameX="0" frameY="-3" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0001" x="0" y="0" width="387" height="500" frameX="0" frameY="-3" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0002" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0003" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0004" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0005" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0006" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0007" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0008" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0009" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Down Nervous0010" x="387" y="0" width="382" height="505" frameX="0" frameY="0" frameWidth="387" frameHeight="505"/>
+	<SubTexture name="Idle Nervous0000" x="769" y="0" width="338" height="511" frameX="0" frameY="-8" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0001" x="769" y="0" width="338" height="511" frameX="0" frameY="-8" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0002" x="1107" y="0" width="334" height="513" frameX="-2" frameY="-6" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0003" x="1107" y="0" width="334" height="513" frameX="-2" frameY="-6" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0004" x="1441" y="0" width="330" height="517" frameX="-4" frameY="-3" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0005" x="1441" y="0" width="330" height="517" frameX="-4" frameY="-3" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0006" x="1771" y="0" width="328" height="518" frameX="-5" frameY="-2" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0007" x="1771" y="0" width="328" height="518" frameX="-5" frameY="-2" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0008" x="2099" y="0" width="326" height="519" frameX="-6" frameY="-1" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0009" x="2099" y="0" width="326" height="519" frameX="-6" frameY="-1" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0010" x="2425" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0011" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0012" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0013" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0014" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0015" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0016" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Idle Nervous0017" x="2751" y="0" width="326" height="521" frameX="-6" frameY="0" frameWidth="338" frameHeight="521"/>
+	<SubTexture name="Left Nervous0000" x="3077" y="0" width="400" height="512" frameX="0" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0001" x="3477" y="0" width="394" height="512" frameX="-6" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0002" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0003" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0004" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0005" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0006" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0007" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0008" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0009" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Left Nervous0010" x="0" y="521" width="391" height="518" frameX="-3" frameY="0" frameWidth="400" frameHeight="518"/>
+	<SubTexture name="Right Nervous0000" x="391" y="521" width="345" height="505" frameX="0" frameY="0" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0001" x="391" y="521" width="345" height="505" frameX="0" frameY="0" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0002" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0003" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0004" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0005" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0006" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0007" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0008" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0009" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Right Nervous0010" x="736" y="521" width="347" height="504" frameX="-5" frameY="-1" frameWidth="352" frameHeight="505"/>
+	<SubTexture name="Up Nervous0000" x="1083" y="521" width="399" height="529" frameX="0" frameY="0" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0001" x="1083" y="521" width="399" height="529" frameX="0" frameY="0" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0002" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0003" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0004" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0005" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0006" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0007" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0008" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0009" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+	<SubTexture name="Up Nervous0010" x="1482" y="521" width="404" height="513" frameX="0" frameY="-11" frameWidth="404" frameHeight="529"/>
+</TextureAtlas>

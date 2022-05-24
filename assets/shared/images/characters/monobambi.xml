@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="bambi.png"><SubTexture name="bambi idle0000" x="0" y="0" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0001" x="504" y="0" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0002" x="1008" y="0" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0003" x="1512" y="0" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0004" x="0" y="554" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0005" x="504" y="554" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0006" x="1008" y="554" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0007" x="1512" y="554" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0008" x="0" y="1108" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0009" x="504" y="1108" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0010" x="1008" y="1108" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0011" x="1512" y="1108" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0012" x="0" y="1662" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0013" x="504" y="1662" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0014" x="1008" y="1662" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi idle0015" x="1512" y="1662" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi left0000" x="0" y="2216" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi left0001" x="504" y="2216" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi left0002" x="1008" y="2216" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi left0003" x="1512" y="2216" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi down0000" x="0" y="2770" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi down0001" x="504" y="2770" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi down0002" x="1008" y="2770" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi down0003" x="1512" y="2770" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi up0000" x="0" y="3324" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi up0001" x="504" y="3324" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi up0002" x="1008" y="3324" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi up0003" x="1512" y="3324" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi right0000" x="0" y="3878" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi right0001" x="504" y="3878" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi right0002" x="1008" y="3878" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi right0003" x="1512" y="3878" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+<SubTexture name="bambi right0004" x="0" y="4432" width="504" height="554" frameX="0" frameY="0" frameWidth="504" frameHeight="554" />
+</TextureAtlas>
