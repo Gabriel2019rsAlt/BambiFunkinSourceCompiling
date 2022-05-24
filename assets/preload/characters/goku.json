@@ -1,0 +1,153 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				-36
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "goku left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-4,
+				-65
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "goku down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				34,
+				-5
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "goku up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-120,
+				0
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "goku right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "idle",
+			"fps": 24,
+			"name": "goku idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-loop",
+			"indices": [
+				10,
+				11,
+				12,
+				12
+			],
+			"name": "idle dance"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "left-loop",
+			"indices": [
+				12,
+				13,
+				14,
+				15
+			],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "right-loop",
+			"indices": [
+				15,
+				16,
+				17,
+				18
+			],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "up-loop",
+			"indices": [
+				56,
+				57,
+				58,
+				59
+			],
+			"name": "up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "hey",
+			"fps": 24,
+			"name": "WhatYouKnowAboutRollingDOWNInTheDeep",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/goku",
+	"position": [
+		250,
+		340
+	],
+	"healthicon": "goku",
+	"flip_x": false,
+	"healthbar_colors": [
+		0,
+		255,
+		255
+	],
+	"camera_position": [
+		-300,
+		-160
+	],
+	"sing_duration": 6.1,
+	"scale": 2
+}

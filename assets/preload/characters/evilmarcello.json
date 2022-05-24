@@ -1,0 +1,153 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				10,
+				6
+			],
+			"loop": false,
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "bambi left",
+			"indices": []
+		},
+		{
+			"offsets": [
+				2,
+				10
+			],
+			"loop": false,
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "bambi down",
+			"indices": []
+		},
+		{
+			"offsets": [
+				-1,
+				4
+			],
+			"loop": false,
+			"anim": "singUP",
+			"fps": 24,
+			"name": "bambi up",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				5
+			],
+			"loop": false,
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "bambi right",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"anim": "idle",
+			"fps": 24,
+			"name": "bambi idle",
+			"indices": []
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "idle-loop",
+			"indices": [
+				10,
+				11,
+				12,
+				12
+			],
+			"name": "idle dance"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "left-loop",
+			"indices": [
+				12,
+				13,
+				14,
+				15
+			],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "right-loop",
+			"indices": [
+				15,
+				16,
+				17,
+				18
+			],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": true,
+			"fps": 24,
+			"anim": "up-loop",
+			"indices": [
+				56,
+				57,
+				58,
+				59
+			],
+			"name": "up"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				0
+			],
+			"anim": "hey",
+			"fps": 24,
+			"name": "WhatYouKnowAboutRollingDOWNInTheDeep",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/evilmarcello",
+	"position": [
+		190,
+		400
+	],
+	"healthicon": "evilmarcello",
+	"flip_x": false,
+	"healthbar_colors": [
+		255,
+		0,
+		0
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1
+}
