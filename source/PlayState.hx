@@ -4333,11 +4333,12 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
-		iconP1.scale.set(1.2, 1.2);
-		iconP2.scale.set(1.2, 1.2);
-
-		iconP1.updateHitbox();
-		iconP2.updateHitbox();
+               var funny:Float = (healthBar.percent * 0.01) + 0.01;
+               //health icon bounce but epic
+               iconP1.setGraphicSize(Std.int(iconP1.width + (50 * funny)),Std.int(iconP2.height - (25 * funny)));
+               iconP2.setGraphicSize(Std.int(iconP2.width + (50 * (2 -funny))),Std.int(iconP2.height - (25 * (2 - funny))));
+               iconP1.updateHitbox();
+               iconP2.updateHitbox();
 		
 		if (gf != null && curBeat % Math.round(gfSpeed * gf.danceEveryNumBeats) == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing") && !gf.stunned)
 		{
