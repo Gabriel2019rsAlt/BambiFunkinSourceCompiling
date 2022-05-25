@@ -163,6 +163,13 @@ class FreeplayState extends MusicBeatState
 
 		add(scoreText);
 
+		if(lastDifficultyName == '')
+		{
+			lastDifficultyName = CoolUtil.defaultDifficulty;
+		}	
+			
+		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(lastDifficultyName)));
+
 		changeSelection();
 		changeDiff();
 
@@ -340,7 +347,7 @@ class FreeplayState extends MusicBeatState
 	{
 		var songLowercase:String = Paths.formatToSongPath(songs[curSelected].songName);
 		var poop:String = Highscore.formatSong(songLowercase, curDifficulty);
-		#if MODS_ALLOWED
+		/*#if MODS_ALLOWED
 		if(!sys.FileSystem.exists(Paths.modsJson(songLowercase + '/' + poop)) && !sys.FileSystem.exists(Paths.json(songLowercase + '/' + poop))) {
 		#else
 		if(!OpenFlAssets.exists(Paths.json(songLowercase + '/' + poop))) {
@@ -348,7 +355,7 @@ class FreeplayState extends MusicBeatState
 			poop = songLowercase;
 			curDifficulty = 1;
 			trace('Couldnt find file');
-		}
+		}*/
 		trace(poop);
 
 		PlayState.SONG = Song.loadFromJson(poop, songLowercase);
@@ -365,6 +372,7 @@ class FreeplayState extends MusicBeatState
 	}
 	else if(controls.RESET)
 	{
+		persistentUpdate = false
 		openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 	}
@@ -384,25 +392,20 @@ public static function destroyFreeplayVocals() {
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = 2;
-		if (curDifficulty > 2)
+			curDifficulty = CoolUtil.difficulties.length-1;
+		if (curDifficulty >= CoolUtil.difficulties.length)
 			curDifficulty = 0;
-		
-		if (songs[curSelected].week == 4)
-			{
-				curDifficulty = 3;
-			}
-		if (songs[curSelected].week == 6 || songs[curSelected].week == 7 || songs[curSelected].week == 8 || songs[curSelected].week == 9 || songs[curSelected].week == 10 || songs[curSelected].week == 11)
-			{
-				curDifficulty = 2;
-			}
+
+		lastDifficultyName = CoolUtil.difficulties[curDifficulty];
+
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
 		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
 		#end
-	
+
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
+		positionHighscore();
 	}
 
 	function changeSelection(change:Int = 0)
@@ -464,6 +467,22 @@ public static function destroyFreeplayVocals() {
 		FlxTween.color(bg, 0.25, bg.color, songColors[songs[curSelected].week]);
 	}
 }
+		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
+		{
+			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
+		}
+		else
+		{
+			curDifficulty = 0;
+		}
+
+		var newPos:Int = CoolUtil.difficulties.indexOf(lastDifficultyName);
+		//trace('Pos of ' + lastDifficultyName + ' is ' + newPos);
+		if(newPos > -1)
+		{
+			curDifficulty = newPos;
+		}
+	}
 
 class SongMetadata
 {
