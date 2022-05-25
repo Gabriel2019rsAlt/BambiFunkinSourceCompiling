@@ -26,9 +26,8 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = -1;
-	private static var lastDifficultyName:String = '';
-	
+	var curDifficulty:Int = 1;
+
 	var bg:FlxSprite;
 
 	var scoreBG:FlxSprite;
@@ -83,7 +82,6 @@ class FreeplayState extends MusicBeatState
 		#end
 
 		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
-                bg.color = 0xFF4965FF;
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 
@@ -116,9 +114,9 @@ class FreeplayState extends MusicBeatState
 			switch (AllPossibleSongs[CurrentPack].toLowerCase())
 			{
 				case 'dave':
-					addWeek(['House', 'Insanity'], 1, ['dave-ragewor']);
+					addWeek(['House', 'Insanity'], 1, ['dave-player']);
 					addWeek(['Polygonized'], 2,['dave3d']);
-					addWeek(['Bonus-Song'], 1,['dave-ragewor']);
+					addWeek(['Bonus-Song'], 1,['dave-player']);
 					addWeek(['Blocked','Corn-Theft','Maze',], 3, ['bambi']);
 					addWeek(['Splitathon'], 4,['splitathon']);
 			}
@@ -365,7 +363,6 @@ class FreeplayState extends MusicBeatState
 	}
 	else if(controls.RESET)
 	{
-		persistentUpdate = false
 		openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 	}
@@ -388,7 +385,7 @@ public static function destroyFreeplayVocals() {
 			curDifficulty = 2;
 		if (curDifficulty > 2)
 			curDifficulty = 0;
-
+		
 		if (songs[curSelected].week == 4)
 			{
 				curDifficulty = 3;
@@ -397,15 +394,13 @@ public static function destroyFreeplayVocals() {
 			{
 				curDifficulty = 2;
 			}
-
 		#if !switch
 		intendedScore = Highscore.getScore(songs[curSelected].songName, curDifficulty);
 		intendedRating = Highscore.getRating(songs[curSelected].songName, curDifficulty);
 		#end
-
+	
 		PlayState.storyDifficulty = curDifficulty;
 		diffText.text = '< ' + CoolUtil.difficultyString() + ' >';
-		positionHighscore();
 	}
 
 	function changeSelection(change:Int = 0)
