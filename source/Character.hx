@@ -52,6 +52,8 @@ class Character extends FlxSprite
 	public var isPlayer:Bool = false;
 	public var curCharacter:String = DEFAULT_CHARACTER;
 
+	public var nativelyPlayable:Bool = false; // fuck character select state because this fucked my brain
+
 	public var colorTween:FlxTween;
 	public var holdTimer:Float = 0;
 	public var heyTimer:Float = 0;
@@ -267,7 +269,24 @@ class Character extends FlxSprite
 				specialAnim = false;
 				dance();
 			}
-
+			if (!nativelyPlayable && !isPlayer)
+				{
+					if (animation.curAnim.name.startsWith('sing'))
+					{
+						holdTimer += elapsed;
+					}
+		
+					var dadVar:Float = 4;
+		
+					if (curCharacter == 'dad')
+						dadVar = 6.1;
+					if (holdTimer >= Conductor.stepCrochet * dadVar * 0.001)
+					{
+						dance();
+						holdTimer = 0;
+					}
+				}
+/*
 			if (!isPlayer)
 			{
 				if (animation.curAnim.name.startsWith('sing'))
@@ -281,6 +300,7 @@ class Character extends FlxSprite
 					holdTimer = 0;
 				}
 			}
+			*/
 
 			if(animation.curAnim.finished && animation.getByName(animation.curAnim.name + '-loop') != null)
 			{
@@ -326,6 +346,29 @@ class Character extends FlxSprite
 		}
 		else
 			offset.set(0, 0);
+		
+		if (isPlayer)
+			{
+				if(!nativelyPlayable)
+				{
+					offset.set((daOffset[0] * -1) + globaloffset[0], daOffset[1] + globaloffset[1]);
+				}
+				else
+				{
+					offset.set(daOffset[0] + globaloffset[0], daOffset[1] + globaloffset[1]);
+				}
+			}
+				else
+				{
+					if(nativelyPlayable)
+					{
+						offset.set((daOffset[0] * -1), daOffset[1]);
+					}
+					else
+					{
+						offset.set(daOffset[0], daOffset[1]);
+					}
+				}
 
 		if (curCharacter.startsWith('gf'))
 		{
