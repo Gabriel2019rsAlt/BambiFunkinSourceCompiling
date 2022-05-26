@@ -117,7 +117,7 @@ class FreeplayState extends MusicBeatState
 				case 'dave':
 					addWeek(['Tutorial'], 1, ['gf']);
 					addWeek(['Bopeebo', 'Fresh', 'Dad-battle'], 2,['dad']);
-					addWeek(['Spookeez', 'South], 1,['skid']);
+					addWeek(['Spookeez', 'South'], 1,['skid']);
 					addWeek(['Pico','Philly-nice','Blammed',], 3, ['pico']);
 					addWeek(['satin-panties', 'high', 'milf'], 4,['mom']);
 			}
