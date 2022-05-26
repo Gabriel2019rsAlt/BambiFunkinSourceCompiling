@@ -108,6 +108,9 @@ class PlayState extends MusicBeatState
 	public var songSpeed(default, set):Float = 1;
 	public var songSpeedType:String = "multiplicative";
 	public var noteKillOffset:Float = 350;
+
+	public static var characteroverride:String = "none";
+	public static var formoverride:String = "none";
 	
 	public var boyfriendGroup:FlxSpriteGroup;
 	public var dadGroup:FlxSpriteGroup;
@@ -249,8 +252,6 @@ class PlayState extends MusicBeatState
 	public var opponentCameraOffset:Array<Float> = null;
 	public var girlfriendCameraOffset:Array<Float> = null;
 
-	public static var hasPlayedOnce:Bool = false;
-	
 	#if desktop
 	// Discord RPC variables
 	var storyDifficultyText:String = "";
@@ -347,6 +348,7 @@ class PlayState extends MusicBeatState
 		if (isStoryMode)
 		{
 			detailsText = "Story Mode: " + WeekData.getCurrentWeek().weekName;
+			formoverride = "bf"; // he
 		}
 		else
 		{
@@ -885,11 +887,27 @@ class PlayState extends MusicBeatState
 		dadGroup.add(dad);
 		startCharacterLua(dad.curCharacter);
 		
+		/*
                 boyfriend = new Boyfriend(0, 0, SONG.player1);
 		startCharacterPos(boyfriend);
 		boyfriendGroup.add(boyfriend);
 		startCharacterLua(boyfriend.curCharacter);
-		
+		*/
+
+		if (formoverride == "none" || formoverride == "bf")
+			{
+                boyfriend = new Boyfriend(0, 0, SONG.player1);
+		        startCharacterPos(boyfriend);
+		        boyfriendGroup.add(boyfriend);
+		        startCharacterLua(boyfriend.curCharacter);
+			}
+			else
+			{
+				boyfriend = new Boyfriend(0, 0, formoverride);
+				startCharacterPos(boyfriend);
+				boyfriendGroup.add(boyfriend);
+				startCharacterLua(boyfriend.curCharacter);
+			}
 		var camPos:FlxPoint = new FlxPoint(girlfriendCameraOffset[0], girlfriendCameraOffset[1]);
 		if(gf != null)
 		{
@@ -4333,12 +4351,11 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
-               var funny:Float = (healthBar.percent * 0.01) + 0.01;
-               //health icon bounce but epic
-               iconP1.setGraphicSize(Std.int(iconP1.width + (50 * funny)),Std.int(iconP2.height - (25 * funny)));
-               iconP2.setGraphicSize(Std.int(iconP2.width + (50 * (2 -funny))),Std.int(iconP2.height - (25 * (2 - funny))));
-               iconP1.updateHitbox();
-               iconP2.updateHitbox();
+		iconP1.scale.set(1.2, 1.2);
+		iconP2.scale.set(1.2, 1.2);
+
+		iconP1.updateHitbox();
+		iconP2.updateHitbox();
 		
 		if (gf != null && curBeat % Math.round(gfSpeed * gf.danceEveryNumBeats) == 0 && !gf.stunned && gf.animation.curAnim.name != null && !gf.animation.curAnim.name.startsWith("sing") && !gf.stunned)
 		{
