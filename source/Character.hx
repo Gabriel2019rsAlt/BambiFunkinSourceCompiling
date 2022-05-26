@@ -53,6 +53,7 @@ class Character extends FlxSprite
 	public var curCharacter:String = DEFAULT_CHARACTER;
 
 	public var nativelyPlayable:Bool = false; // fuck character select state because this fucked my brain
+	public var globaloffset:Array<Float> = [0,0];
 
 	public var colorTween:FlxTween;
 	public var holdTimer:Float = 0;
