@@ -339,6 +339,7 @@ class FreeplayState extends MusicBeatState
 					}
 			}
 		}
+}
 	#if PRELOAD_ALL
 	if(space && instPlaying != curSelected)
 	{
