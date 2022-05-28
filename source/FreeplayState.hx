@@ -83,7 +83,7 @@ class FreeplayState extends MusicBeatState
 		isDebug = true;
 		#end
 
-		bg.loadGraphic(MainMenuState.randomizeBG());
+		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 		bg.color = 0xFF4965FF;
 		add(bg);
 
@@ -110,27 +110,6 @@ class FreeplayState extends MusicBeatState
 		Highscore.load();
 		add(NameAlpha);
 
-	    if (FlxG.keys.justPressed.SEVEN)
-			{
-				FlxG.sound.music.volume = 0;
-				PlayState.SONG = Song.loadFromJson("opposition-hard", "opposition"); // you dun fucked up again
-				// FlxG.save.data.oppositionFound = true;
-				
-				new FlxTimer().start(0.25, function(tmr:FlxTimer)
-				{
-				if (ClientPrefs.css)
-				{
-				LoadingState.loadAndSwitchState(new CharacterSelectState());
-				}
-				else
-					{
-						LoadingState.loadAndSwitchState(new PlayState());
-					}
-					FlxG.sound.music.volume = 0;
-					FreeplayState.destroyFreeplayVocals();
-				});
-			}
-			
 		super.create();
 	}
     			// FlxG.sound.music.volume = 0;
@@ -350,7 +329,6 @@ class FreeplayState extends MusicBeatState
 				PlayState.storyWeek = songs[curSelected].week;
 				if(ClientPrefs.flashing) camGame.flash(FlxColor.WHITE, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-				if (ClientPrefs.css)
 				{
 				LoadingState.loadAndSwitchState(new CharacterSelectState());
 				}
