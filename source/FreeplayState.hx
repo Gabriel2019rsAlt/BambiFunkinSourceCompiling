@@ -339,7 +339,7 @@ class FreeplayState extends MusicBeatState
 					}
 			}
 		}
-}
+};
 	if (fuckyou)
 		{
 			FlxG.sound.music.volume = 0;
