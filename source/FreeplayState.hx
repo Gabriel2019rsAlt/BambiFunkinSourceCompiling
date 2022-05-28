@@ -339,7 +339,8 @@ class FreeplayState extends MusicBeatState
 					}
 			}
 		}
-		if (fuckyou)
+}
+	if (fuckyou)
 		{
 			FlxG.sound.music.volume = 0;
 			PlayState.SONG = Song.loadFromJson("disposition", "disposition"); // you dun fucked up again
