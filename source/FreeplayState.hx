@@ -480,7 +480,6 @@ public static function destroyFreeplayVocals() {
 			curDifficulty = newPos;
 		}
 	}
-}
 
 class SongMetadata
 {
