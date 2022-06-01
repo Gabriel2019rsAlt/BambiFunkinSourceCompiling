@@ -473,7 +473,7 @@ public static function destroyFreeplayVocals() {
 		FlxTween.color(bg, 0.25, bg.color, songColors[songs[curSelected].week]);
 	}
 }
-		CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty)
+		if (CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
 		{
 			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
 		}
