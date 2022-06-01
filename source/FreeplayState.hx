@@ -268,6 +268,7 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.UI_DOWN_P;
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE;
+		var ctrl = FlxG.keys.justPressed.CONTROL;
 		var fuckyou = FlxG.keys.justPressed.SEVEN;
 
 		if (upP)
@@ -283,6 +284,12 @@ class FreeplayState extends MusicBeatState
 		if (controls.UI_RIGHT_P)
 			changeDiff(1);
 
+		if(ctrl)
+		{
+			persistentUpdate = false;
+			openSubState(new GameplayChangersSubstate());
+		}
+		
 		if (controls.BACK)
 			{
 				FlxG.sound.play(Paths.sound('cancelMenu'));
