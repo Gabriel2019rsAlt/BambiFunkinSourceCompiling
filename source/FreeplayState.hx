@@ -27,6 +27,7 @@ class FreeplayState extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 1;
+	private static var lastDifficultyName:String = '';
 
 	var bg:FlxSprite;
 
@@ -161,6 +162,12 @@ class FreeplayState extends MusicBeatState
 		add(diffText);
 
 		add(scoreText);
+			
+	        if(lastDifficultyName == '')
+		{
+			lastDifficultyName = CoolUtil.defaultDifficulty;
+		}
+		curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(lastDifficultyName)));
 
 		changeSelection();
 		changeDiff();
@@ -263,6 +270,7 @@ class FreeplayState extends MusicBeatState
 			lerpRating = intendedRating;
 
 		scoreText.text = 'PERSONAL BEST: ' + lerpScore + ' (' + Math.floor(lerpRating * 100) + '%)';
+		positionHighscore();
 
 		var upP = controls.UI_UP_P;
 		var downP = controls.UI_DOWN_P;
@@ -465,7 +473,23 @@ public static function destroyFreeplayVocals() {
 		FlxTween.color(bg, 0.25, bg.color, songColors[songs[curSelected].week]);
 	}
 }
+		if(CoolUtil.difficulties.contains(CoolUtil.defaultDifficulty))
+		{
+			curDifficulty = Math.round(Math.max(0, CoolUtil.defaultDifficulties.indexOf(CoolUtil.defaultDifficulty)));
+		}
+		else
+		{
+			curDifficulty = 0;
+		}
 
+		var newPos:Int = CoolUtil.difficulties.indexOf(lastDifficultyName);
+		//trace('Pos of ' + lastDifficultyName + ' is ' + newPos);
+		if(newPos > -1)
+		{
+			curDifficulty = newPos;
+		}
+}
+	
 class SongMetadata
 {
 	public var songName:String = "";
