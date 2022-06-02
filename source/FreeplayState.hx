@@ -351,12 +351,6 @@ class FreeplayState extends MusicBeatState
 			
 				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
 				PlayState.isStoryMode = false;
-				PlayState.isFreeplay = true;
-				PlayState.isFreeplayPur = false;
-				PlayState.isPurStoryMode = false;
-				if(isInMods) {
-					PlayState.isModded = true;
-				}
 				PlayState.storyDifficulty = curDifficulty;
 			
 				PlayState.storyWeek = songs[curSelected].week;
@@ -407,16 +401,14 @@ class FreeplayState extends MusicBeatState
 		PlayState.SONG = Song.loadFromJson(poop, songLowercase);
 		PlayState.isStoryMode = false;
 		PlayState.isFreeplay = true;
-		PlayState.isFreeplayPur = false;
-		PlayState.isPurStoryMode = false;
 		
 		PlayState.storyDifficulty = curDifficulty;
 
 		PlayState.storyWeek = songs[curSelected].week;
 		trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
-		CharacterSelectionState.characterFile = 'bf';
-		CharacterSelectionState.scoreMultipliers = [1, 1, 1, 1];
-		LoadingState.loadAndSwitchState(new CharacterSelectionState());
+		CharacterSelectState.characterFile = 'bf';
+		CharacterSelectState.scoreMultipliers = [1, 1, 1, 1];
+		LoadingState.loadAndSwitchState(new CharacterSelectState());
 
 		FlxG.sound.music.volume = 0;
 				
