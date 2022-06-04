@@ -44,7 +44,7 @@ class FreeplayState extends MusicBeatState
 
 	public static var fart:Bool = false;
 
-	private var InMainFreeplayState:Bool = false;
+	private var InMainFreeplayState:Bool = true;
 	private var isInMods:Bool = false;
 
 	public var allowinputShit:Bool = true;
