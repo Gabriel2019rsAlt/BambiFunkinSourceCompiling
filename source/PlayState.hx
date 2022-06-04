@@ -1117,7 +1117,40 @@ class PlayState extends MusicBeatState
 		scoreTxt.scrollFactor.set();
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
-		add(scoreTxt);
+
+		var credits:String;
+		switch (SONG.song.toLowerCase())
+		{
+			case 'tutorial':
+				credits = 'Original Song made by KawaiiSprites!';
+			default:
+				credits = '';
+		}
+		var creditsText:Bool = credits != '';
+		var textYPos:Float = healthBarBG.y + 50;
+		if (creditsText)
+		{
+			textYPos = healthBarBG.y + 30;
+		}
+
+                var swagWatermark = new FlxText(4, scoreTxt.y + 15, 0,
+		SONG.song
+		+ " "
+		+ "- Gab Engine 0.1.2 (PE 0.5.2h)", 16);
+		//+ " ", 16);
+		swagWatermark.setFormat(Paths.font("comic-sans.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		swagWatermark.scrollFactor.set();
+		add(swagWatermark);
+		if (creditsText)
+		{
+			var creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
+			creditsWatermark.setFormat(Paths.font("comic-sans.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+			creditsWatermark.scrollFactor.set();
+			add(creditsWatermark);
+			creditsWatermark.cameras = [camHUD];
+		}
+
+                add(scoreTxt);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -1141,6 +1174,7 @@ class PlayState extends MusicBeatState
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+                swagWatermark.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
 		// if (SONG.song == 'South')
