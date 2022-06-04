@@ -28,7 +28,7 @@ class FreeplayState extends MusicBeatState
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 1;
 
-	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backgrounds/SUSSUS AMOGUS'));
+	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
@@ -322,13 +322,6 @@ class FreeplayState extends MusicBeatState
 				trace(poop);
 			
 				PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
-				PlayState.isStoryMode = false;
-				PlayState.isFreeplay = true;
-				PlayState.isFreeplayPur = false;
-				PlayState.isPurStoryMode = false;
-				if(isInMods) {
-					PlayState.isModded = true;
-				}
 				PlayState.storyDifficulty = curDifficulty;
 			
 				PlayState.storyWeek = songs[curSelected].week;
@@ -377,10 +370,6 @@ class FreeplayState extends MusicBeatState
 		trace(poop);
 
 		PlayState.SONG = Song.loadFromJson(poop, songLowercase);
-		PlayState.isStoryMode = false;
-		PlayState.isFreeplay = true;
-		PlayState.isFreeplayPur = false;
-		PlayState.isPurStoryMode = false;
 		
 		PlayState.storyDifficulty = curDifficulty;
 
