@@ -1126,14 +1126,6 @@ class PlayState extends MusicBeatState
 		swagWatermark.setFormat(Paths.font("comic-sans.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		swagWatermark.scrollFactor.set();
 		add(swagWatermark);
-		if (creditsText)
-		{
-			var creditsWatermark = new FlxText(4, healthBarBG.y + 50, 0, credits, 16);
-			creditsWatermark.setFormat(Paths.font("comic-sans.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-			creditsWatermark.scrollFactor.set();
-			add(creditsWatermark);
-			creditsWatermark.cameras = [camHUD];
-		}
 
                 add(scoreTxt);
 
