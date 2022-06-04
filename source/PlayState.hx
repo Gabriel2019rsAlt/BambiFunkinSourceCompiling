@@ -1118,21 +1118,6 @@ class PlayState extends MusicBeatState
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 
-		var credits:String;
-		switch (SONG.song.toLowerCase())
-		{
-			case 'tutorial':
-				credits = 'Original Song made by KawaiiSprites!';
-			default:
-				credits = '';
-		}
-		var creditsText:Bool = credits != '';
-		var textYPos:Float = healthBarBG.y + 50;
-		if (creditsText)
-		{
-			textYPos = healthBarBG.y + 30;
-		}
-
                 var swagWatermark = new FlxText(4, scoreTxt.y + 15, 0,
 		SONG.song
 		+ " "
