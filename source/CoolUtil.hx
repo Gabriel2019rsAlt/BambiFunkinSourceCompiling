@@ -5,6 +5,7 @@ import openfl.utils.Assets;
 import lime.utils.Assets as LimeAssets;
 import lime.utils.AssetLibrary;
 import lime.utils.AssetManifest;
+import flixel.system.FlxSound;
 #if sys
 import sys.io.File;
 import sys.FileSystem;
@@ -16,18 +17,11 @@ using StringTools;
 
 class CoolUtil
 {
-	public static var difficultyStuff:Array<Dynamic> = [
+	public static var defaultDifficulties:Array<String> = [
 		['Easy', '-easy'],
 		['Normal', ''],
 		['Hard', '-hard'],
-		['FINALE', '']
 	];
-
-	public static function difficultyString():String
-	{
-		return difficultyStuff[PlayState.storyDifficulty][0].toUpperCase();
-	}
-
 	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
 	public static var difficulties:Array<String> = [];
@@ -46,6 +40,11 @@ class CoolUtil
 			fileSuffix = '';
 		}
 		return Paths.formatToSongPath(fileSuffix);
+	}
+
+	public static function difficultyString():String
+	{
+		return difficulties[PlayState.storyDifficulty].toUpperCase();
 	}
 
 	inline public static function boundTo(value:Float, min:Float, max:Float):Float {
@@ -118,16 +117,11 @@ class CoolUtil
 
 	//uhhhh does this even work at all? i'm starting to doubt
 	public static function precacheSound(sound:String, ?library:String = null):Void {
-		precacheSoundFile(Paths.sound(sound, library));
+		Paths.sound(sound, library);
 	}
 
 	public static function precacheMusic(sound:String, ?library:String = null):Void {
-		precacheSoundFile(Paths.music(sound, library));
-	}
-
-	private static function precacheSoundFile(file:Dynamic):Void {
-		if (Assets.exists(file, SOUND) || Assets.exists(file, MUSIC))
-			Assets.getSound(file, true);
+		Paths.music(sound, library);
 	}
 
 	public static function browserLoad(site:String) {
