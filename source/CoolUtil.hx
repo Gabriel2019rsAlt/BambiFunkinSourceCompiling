@@ -21,11 +21,6 @@ class CoolUtil
 		['Normal', ''],
 		['Hard', '-hard']
 	];
-
-	public static function difficultyString():String
-	{
-		return difficultyStuff[PlayState.storyDifficulty][0].toUpperCase();
-	}
 	
 	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
