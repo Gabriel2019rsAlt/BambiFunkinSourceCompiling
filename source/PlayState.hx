@@ -1127,11 +1127,9 @@ class PlayState extends MusicBeatState
 		judgementCounter.cameras = [camHUD];
 		judgementCounter.screenCenter(Y);
 		judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nMisses: ${songMisses}';
-		if (ClientPrefs.judgementCounter)
-			{
-				add(judgementCounter);
-			}
-
+		if (ClientPrefs.judgementCounter) {
+			add(judgementCounter);
+		}
 
                 var swagWatermark = new FlxText(4, scoreTxt.y + 15, 0,
 		SONG.song
