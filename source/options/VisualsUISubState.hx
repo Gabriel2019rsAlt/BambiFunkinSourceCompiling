@@ -50,7 +50,7 @@ class VisualsUISubState extends BaseOptionsMenu
 
 		var option:Option = new Option('Judgement Counter',
 			'If enabled, it will show you how much sicks and other shit you hit.',
-			'hideHud',
+			'judgementCounter',
 			'bool',
 			false);
 		addOption(option);
