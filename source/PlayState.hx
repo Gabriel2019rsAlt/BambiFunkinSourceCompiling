@@ -2354,6 +2354,7 @@ Thing;
 				});
 	    	}
 	}
+}
 		if (curbg != null)
 			{
 				if (curbg.active)
