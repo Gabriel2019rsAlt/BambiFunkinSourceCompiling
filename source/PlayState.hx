@@ -2129,6 +2129,7 @@ class PlayState extends MusicBeatState
 
 			strumLineNotes.add(babyArrow);
 			babyArrow.postAddedToGroup();
+			arrowJunks.push([babyArrow.x, babyArrow.y]);
 		}
 	}
 
@@ -2282,7 +2283,77 @@ class PlayState extends MusicBeatState
 		{
 			iconP1.swapOldIcon();
 		}*/
+		if (SONG.song.toLowerCase() == 'disruption') // deez all day
+			{
+				var krunkThing = 60;
+	
+				poop.alpha = Math.sin(elapsedtime) / 2.5 + 0.4;
+	
+				playerStrums.forEach(function(spr:FlxSprite)
+				{
+					spr.x = arrowJunks[spr.ID + 4][0] + (Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) * krunkThing;
+					spr.y = arrowJunks[spr.ID + 4][1] + Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1) * krunkThing;
+	
+					spr.scale.x = Math.abs(Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1)) / 4;
+	
+					spr.scale.y = Math.abs((Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) / 2);
 
+					spr.scale.x += 0.2;
+					spr.scale.y += 0.2;
+
+					spr.scale.x *= 1.5;
+					spr.scale.y *= 1.5;
+				});
+				opponentStrums.forEach(function(spr:FlxSprite)
+				{
+					spr.x = arrowJunks[spr.ID][0] + (Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) * 
+Thing;
+					spr.y = arrowJunks[spr.ID][1] + Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1) * krunkThing;
+	
+					spr.scale.x = Math.abs(Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1)) / 4;
+	
+					spr.scale.y = Math.abs((Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) / 2);
+	
+					spr.scale.x += 0.2;
+					spr.scale.y += 0.2;
+	
+					spr.scale.x *= 1.5;
+		     		spr.scale.y *= 1.5;
+				});
+	
+				notes.forEachAlive(function(spr:Note){
+					if (spr.mustPress) {
+						spr.x = arrowJunks[spr.noteData + 4][0] + (Math.sin(elapsedtime) * ((spr.noteData % 2) == 0 ? 1 : -1)) * krunkThing;
+						spr.y = arrowJunks[spr.noteData + 4][1] + Math.sin(elapsedtime - 5) * ((spr.noteData % 2) == 0 ? 1 : -1) * krunkThing;
+
+						spr.scale.x = Math.abs(Math.sin(elapsedtime - 5) * ((spr.noteData % 2) == 0 ? 1 : -1)) / 4;
+
+						spr.scale.y = Math.abs((Math.sin(elapsedtime) * ((spr.noteData % 2) == 0 ? 1 : -1)) / 2);
+	
+						spr.scale.x += 0.2;
+						spr.scale.y += 0.2;
+
+						spr.scale.x *= 1.5;
+						spr.scale.y *= 1.5;
+						}
+				     	else
+					    {
+						spr.x = arrowJunks[spr.noteData][0] + (Math.sin(elapsedtime) * ((spr.noteData % 2) == 0 ? 1 : -1)) * krunkThing;
+						spr.y = arrowJunks[spr.noteData][1] + Math.sin(elapsedtime - 5) * ((spr.noteData % 2) == 0 ? 1 : -1) * krunkThing;
+
+						spr.scale.x = Math.abs(Math.sin(elapsedtime - 5) * ((spr.noteData % 2) == 0 ? 1 : -1)) / 4;
+	
+						spr.scale.y = Math.abs((Math.sin(elapsedtime) * ((spr.noteData % 2) == 0 ? 1 : -1)) / 2);
+	
+						spr.scale.x += 0.2;
+						spr.scale.y += 0.2;
+	
+						spr.scale.x *= 1.5;
+						spr.scale.y *= 1.5;
+					}
+				});
+	    	}
+	}
 		if (curbg != null)
 			{
 				if (curbg.active)
