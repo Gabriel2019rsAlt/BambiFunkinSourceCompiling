@@ -19,14 +19,15 @@ class CoolUtil
 	public static var difficultyStuff:Array<Dynamic> = [
 		['Easy', '-easy'],
 		['Normal', ''],
-		['Hard', '-hard']
+		['Hard', '-hard'],
+		['FINALE', '']
 	];
 
-	public static var defaultDifficulties:Array<String> = [
-		'Easy',
-		'Normal',
-		'Hard'
-	];
+	public static function difficultyString():String
+	{
+		return difficultyStuff[PlayState.storyDifficulty][0].toUpperCase();
+	}
+
 	public static var defaultDifficulty:String = 'Normal'; //The chart that has no suffix and starting difficulty on Freeplay/Story Mode
 
 	public static var difficulties:Array<String> = [];
@@ -45,11 +46,6 @@ class CoolUtil
 			fileSuffix = '';
 		}
 		return Paths.formatToSongPath(fileSuffix);
-	}
-
-	public static function difficultyString():String
-	{
-		return difficulties[PlayState.storyDifficulty].toUpperCase();
 	}
 
 	inline public static function boundTo(value:Float, min:Float, max:Float):Float {
