@@ -2293,7 +2293,7 @@ class PlayState extends MusicBeatState
 			{
 				var krunkThing = 60;
 	
-				poop.alpha = Math.sin(elapsedtime) / 2.5 + 0.4;
+				//poop.alpha = Math.sin(elapsedtime) / 2.5 + 0.4;
 	
 				playerStrums.forEach(function(spr:FlxSprite)
 				{
@@ -2312,8 +2312,7 @@ class PlayState extends MusicBeatState
 				});
 				opponentStrums.forEach(function(spr:FlxSprite)
 				{
-					spr.x = arrowJunks[spr.ID][0] + (Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) * 
-Thing;
+					spr.x = arrowJunks[spr.ID][0] + (Math.sin(elapsedtime) * ((spr.ID % 2) == 0 ? 1 : -1)) * krunkThing;
 					spr.y = arrowJunks[spr.ID][1] + Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1) * krunkThing;
 	
 					spr.scale.x = Math.abs(Math.sin(elapsedtime - 5) * ((spr.ID % 2) == 0 ? 1 : -1)) / 4;
