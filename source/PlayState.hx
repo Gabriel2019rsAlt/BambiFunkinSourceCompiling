@@ -2358,9 +2358,7 @@ Thing;
 						spr.scale.y *= 1.5;
 					}
 				});
-	    	}
-	}
-}
+			}
 		if (curbg != null)
 			{
 				if (curbg.active)
