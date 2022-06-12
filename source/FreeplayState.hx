@@ -325,14 +325,13 @@ class FreeplayState extends MusicBeatState
 				PlayState.storyDifficulty = curDifficulty;
 			
 				PlayState.storyWeek = songs[curSelected].week;
-				LoadingState.loadAndSwitchState(new CharacterSelectState());
+				LoadingState.loadAndSwitchState(new PlayState());
 			}
 		}
 		if(ctrl)
 		{
+			persistentUpdate = false;
 			openSubState(new GameplayChangersSubstate());
-			allowinputShit = false;
-			fart = false;
 		}
 	#if PRELOAD_ALL
 	if(space && instPlaying != curSelected)
@@ -375,7 +374,7 @@ class FreeplayState extends MusicBeatState
 
 		PlayState.storyWeek = songs[curSelected].week;
 		trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
-		LoadingState.loadAndSwitchState(new CharacterSelectState());
+		LoadingState.loadAndSwitchState(new PlayState());
 
 		FlxG.sound.music.volume = 0;
 				
